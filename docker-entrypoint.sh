@@ -5,7 +5,7 @@ echo "Architecture: $(uname -m)"
 echo "Python version: $(python --version)"
 echo "UV version: $(uv --version)"
 
-gcloud auth activate-service-account --key-file=$GOOGLE_APPLICATION_CREDENTIALS
+gcloud auth activate-service-account --key-file="$GOOGLE_APPLICATION_CREDENTIALS"
 mkdir -p /mnt/gcs_bucket
 gcsfuse --key-file=$GOOGLE_APPLICATION_CREDENTIALS $GCS_BUCKET_NAME /mnt/gcs_data
 echo 'GCS bucket mounted at /mnt/gcs_data'
